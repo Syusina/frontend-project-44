@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const greeting = (nameGame, gameRules) => {
+export const getGreeting = (nameGame, gameRules) => {
   console.log(`${nameGame}\nWelcome to the Brain Games!`);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hi, ${userName}!`);
@@ -14,7 +14,7 @@ export const startRound = (isNumberEven) => {
   return userAnswer;
 };
 
-export const examination = (userAnswer, correctAnswer, userName) => {
+export const getTested = (userAnswer, correctAnswer, userName) => {
   let result;
   if (userAnswer === correctAnswer) {
     console.log('Correct!');
@@ -28,7 +28,7 @@ export const examination = (userAnswer, correctAnswer, userName) => {
 
 export const startGame = (start, userName) => {
   for (let i = 0; i < 3; i += 1) {
-    const rightAnswer = startRound(start);
+    const rightAnswer = start();
     if (!rightAnswer) {
       return;
     }
