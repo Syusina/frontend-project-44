@@ -2,7 +2,7 @@
 import { getGreeting, startGame } from '../src/index.js';
 import startRound from '../src/games/brain-prime.js';
 
-const nameGame = 'brain-prime';
+const nameGame = 'brain-prime\n';
 const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const gretting = getGreeting(nameGame, gameRules);
 

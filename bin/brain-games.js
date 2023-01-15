@@ -2,6 +2,5 @@
 
 import getGreeting from '../src/cli.js';
 
-const nameGame = 'brain-games';
-const gameRules = 'What is the result of the expression?';
+const nameGame = 'brain-games\n';
 getGreeting(nameGame);

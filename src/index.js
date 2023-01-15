@@ -8,12 +8,6 @@ export const getGreeting = (nameGame, gameRules) => {
   return userName;
 };
 
-export const startRound = (isNumberEven) => {
-  const userAnswer = readlineSync.question(`Question: ${isNumberEven} `).toLowerCase();
-  console.log(`Your answer: ${userAnswer} `);
-  return userAnswer;
-};
-
 export const getTested = (userAnswer, correctAnswer, userName) => {
   let result;
   if (userAnswer === correctAnswer) {

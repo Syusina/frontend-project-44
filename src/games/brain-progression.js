@@ -18,8 +18,8 @@ const startRound = (gretting) => {
   const numbersStr = `${allNumbers.slice(0, passNumber)} .. ${allNumbers.slice(passNumber + 1)}`;
   const numbersArr = numbersStr.split(',');
   const numbersForQuestion = numbersArr.join(' ');
-  const userAnswer = readlineSync.question(`Question: ${numbersForQuestion} `).toString();
-  console.log(`Your answer: ${userAnswer} `);
+  console.log(`Question: ${numbersForQuestion} `);
+  const userAnswer = readlineSync.question('Your answer: ').toString();
   const correctAnswer = allNumbers[passNumber].toString();
   const result = getTested(userAnswer, correctAnswer, gretting);
   return result;

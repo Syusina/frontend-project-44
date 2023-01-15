@@ -6,8 +6,8 @@ import generateRandomNumber from '../generator-random.js';
 const startRound = (gretting) => {
   let firstNumber = generateRandomNumber();
   let secondNumber = generateRandomNumber();
-  const userAnswer = readlineSync.question(`Question: ${firstNumber} ${secondNumber} `).toString();
-  console.log(`Your answer: ${userAnswer} `);
+  console.log(`Question: ${firstNumber} ${secondNumber} `);
+  const userAnswer = readlineSync.question('Your answer: ').toString();
   while (firstNumber !== secondNumber) {
     if (firstNumber > secondNumber) {
       firstNumber -= secondNumber;

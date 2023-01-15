@@ -2,7 +2,7 @@
 import { getGreeting, startGame } from '../src/index.js';
 import startRound from '../src/games/brain-gcd.js';
 
-const nameGame = 'brain-gcd';
+const nameGame = 'brain-gcd\n';
 const gameRules = 'Find the greatest common divisor of given numbers.';
 const gretting = getGreeting(nameGame, gameRules);
 

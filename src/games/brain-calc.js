@@ -9,8 +9,8 @@ const startRound = (gretting) => {
   const operators = '+*';
   const randomIndex = Math.floor(Math.random() * operators.length);
   const randomOperator = operators[randomIndex];
-  const userAnswer = readlineSync.question(`Question: ${firstNumber} ${randomOperator} ${secondNumber}? `).toString();
-  console.log(`Your answer: ${userAnswer} `);
+  console.log(`Question: ${firstNumber} ${randomOperator} ${secondNumber} `);
+  const userAnswer = readlineSync.question('Your answer: ').toString();
   const correctAnswer = (randomOperator === '+') ? (firstNumber + secondNumber).toString() : (firstNumber * secondNumber).toString();
   const result = getTested(userAnswer, correctAnswer, gretting);
   return result;
