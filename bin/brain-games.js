@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
-import greeting from '../src/cli.js';
+import getGreeting from '../src/cli.js';
 
-greeting();
+const nameGame = 'brain-games';
+const gameRules = 'What is the result of the expression?';
+const gretting = getGreeting(nameGame, gameRules);
