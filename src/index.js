@@ -20,7 +20,7 @@ export const getTested = (userAnswer, correctAnswer, userName) => {
     console.log('Correct!');
     result = true;
   } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
     result = false;
   }
   return result;
@@ -28,7 +28,7 @@ export const getTested = (userAnswer, correctAnswer, userName) => {
 
 export const startGame = (start, userName) => {
   for (let i = 0; i < 3; i += 1) {
-    const rightAnswer = start();
+    const rightAnswer = start(userName);
     if (!rightAnswer) {
       return;
     }
