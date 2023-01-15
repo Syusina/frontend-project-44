@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { getGreeting, startGame } from '../src/index.js';
-import startRound from '../src/games/brain-progression.js';
+import startRound from '../src/games/progression.js';
 
 const nameGame = 'brain-progression\n';
 const gameRules = 'What number is missing in the progression?';

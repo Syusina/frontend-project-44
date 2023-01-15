@@ -8,7 +8,7 @@ export const gameRules = 'Answer "yes" if the number is even, otherwise answer "
 
 const startRound = (gretting) => {
   const numberForQuestion = generateRandomNumber();
-  console.log(`Question: ${numberForQuestion} `);
+  console.log(`Question: ${numberForQuestion}`);
   const userAnswer = readlineSync.question('Your answer: ').toLowerCase();
   const correctAnswer = (numberForQuestion % 2 === 0) ? 'yes' : 'no';
   const result = getTested(userAnswer, correctAnswer, gretting);
