@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { getGreeting, startGame } from '../src/index.js';
-import startRound from '../src/games/for-brain-gcd.js';
+import startRound from '../src/games/brain-gcd.js';
 
 const nameGame = 'brain-gcd';
 const gameRules = 'Find the greatest common divisor of given numbers.';
