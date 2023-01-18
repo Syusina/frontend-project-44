@@ -2,7 +2,6 @@
 import startGame from '../index.js';
 import generateRandomNumber from '../generator-random.js';
 
-const nameGame = 'brain-progression\n';
 const gameRules = 'What number is missing in the progression?';
 const startRound = () => {
   const allNumbers = [];
@@ -28,6 +27,6 @@ const startRound = () => {
   return [numberForQuestion, correctAnswer];
 };
 
-const letsPlay = () => startGame(nameGame, gameRules, startRound);
+const letsPlay = () => startGame(gameRules, startRound);
 
 export default letsPlay;

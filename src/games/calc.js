@@ -2,7 +2,6 @@
 import startGame from '../index.js';
 import generateRandomNumber from '../generator-random.js';
 
-const nameGame = 'brain-calc\n';
 const gameRules = 'What is the result of the expression?';
 
 const startRound = () => {
@@ -16,6 +15,6 @@ const startRound = () => {
   const correctAnswer = (randomOperator === '+') ? (firstNumber + secondNumber).toString() : (firstNumber * secondNumber).toString();
   return [numberForQuestion, correctAnswer];
 };
-const letsPlay = () => startGame(nameGame, gameRules, startRound);
+const letsPlay = () => startGame(gameRules, startRound);
 
 export default letsPlay;
