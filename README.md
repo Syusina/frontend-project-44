@@ -34,16 +34,16 @@ Node.js `v13.0.0` or higher must be installed to run the games. Then install the
 <h2>Game demonstration</h2>
 
 <h3>Brain-even:</h3>
-<a href="https://asciinema.org/a/KqQCnqW5WJL9AOfklg1lIUpwG" target="_blank"><img src="https://asciinema.org/a/KqQCnqW5WJL9AOfklg1lIUpwG.svg" /></a>
+<a href="https://asciinema.org/a/4MsbKVl9tnc6EWJDsej6NgdO9" target="_blank"><img src="https://asciinema.org/a/4MsbKVl9tnc6EWJDsej6NgdO9.svg" /></a>
 
 <h3>Brain-calc:</h3> 
-<a href="https://asciinema.org/a/hHAXtAaC4q12MjcfnmUUX9jb5" target="_blank"><img src="https://asciinema.org/a/hHAXtAaC4q12MjcfnmUUX9jb5.svg" /></a>
+<a href="https://asciinema.org/a/4m8KS1YRn2Tger1eEcLVutpP4" target="_blank"><img src="https://asciinema.org/a/4m8KS1YRn2Tger1eEcLVutpP4.svg" /></a>
 
 <h3>Brain-gcd:</h3>
-<a href="https://asciinema.org/a/6aL26i7CLIKpffaYkDs96PTlQ" target="_blank"><img src="https://asciinema.org/a/6aL26i7CLIKpffaYkDs96PTlQ.svg" /></a>
+<a href="https://asciinema.org/a/y1IWVSrI7h9wZJk9aaeHAZaAG" target="_blank"><img src="https://asciinema.org/a/y1IWVSrI7h9wZJk9aaeHAZaAG.svg" /></a>
 
 <h3>Brain-progression:</h3>
-<a href="https://asciinema.org/a/vFwstZ00jwpYMF6De25qEu011" target="_blank"><img src="https://asciinema.org/a/vFwstZ00jwpYMF6De25qEu011.svg" /></a>
+<a href="https://asciinema.org/a/WuWk78BVVpdeIVgdcNoXzt40t" target="_blank"><img src="https://asciinema.org/a/WuWk78BVVpdeIVgdcNoXzt40t.svg" /></a>
 
-<h3>Nrain-prime:</h3>
-<a href="https://asciinema.org/a/7y2mtM6ChJctiVE2Vq4Pwuexe" target="_blank"><img src="https://asciinema.org/a/7y2mtM6ChJctiVE2Vq4Pwuexe.svg" /></a>
+<h3>Brain-prime:</h3>
+<a href="https://asciinema.org/a/rVDMJFvMvlIxqPpKyhTbzjyJg" target="_blank"><img src="https://asciinema.org/a/rVDMJFvMvlIxqPpKyhTbzjyJg.svg" /></a>
