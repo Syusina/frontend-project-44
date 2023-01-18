@@ -4,7 +4,7 @@ import generateRandomNumber from '../generator-random.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 const startRound = () => {
-  const numberForQuestion = generateRandomNumber();
+  const numberForQuestion = generateRandomNumber(1, 100);
   const correctAnswer = (numberForQuestion % 2 === 0) ? 'yes' : 'no';
   return [numberForQuestion, correctAnswer];
 };

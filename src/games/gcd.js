@@ -5,8 +5,8 @@ import generateRandomNumber from '../generator-random.js';
 const gameRules = 'Find the greatest common divisor of given numbers.';
 
 const startRound = () => {
-  let firstNumber = generateRandomNumber();
-  let secondNumber = generateRandomNumber();
+  let firstNumber = generateRandomNumber(1, 100);
+  let secondNumber = generateRandomNumber(1, 100);
   const numberForQuestion = `${firstNumber} ${secondNumber}`;
 
   while (firstNumber !== secondNumber) {

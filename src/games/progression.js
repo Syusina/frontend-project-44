@@ -5,8 +5,8 @@ import generateRandomNumber from '../generator-random.js';
 const gameRules = 'What number is missing in the progression?';
 const startRound = () => {
   const allNumbers = [];
-  let startNumber = generateRandomNumber();
-  const multiplier = generateRandomNumber();
+  let startNumber = generateRandomNumber(1, 100);
+  const multiplier = generateRandomNumber(1, 100);
   const quantity = 10;
   let i = 0;
   while (i < quantity) {
@@ -14,12 +14,7 @@ const startRound = () => {
     startNumber += multiplier;
     i += 1;
   }
-  const getRandomInt = (minNum, maxNum) => {
-    const min = Math.ceil(minNum);
-    const max = Math.floor(maxNum);
-    return Math.floor(Math.random() * (max - min)) + min;
-  };
-  const passNumber = getRandomInt(0, 10);
+  const passNumber = generateRandomNumber(0, 10);
   const numbersStr = `${allNumbers.slice(0, passNumber)} .. ${allNumbers.slice(passNumber + 1, allNumbers.length - 1)}`;
   const numbersArr = numbersStr.split(',');
   const numberForQuestion = numbersArr.join(' ');

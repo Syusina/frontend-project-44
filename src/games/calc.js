@@ -5,8 +5,8 @@ import generateRandomNumber from '../generator-random.js';
 const gameRules = 'What is the result of the expression?';
 
 const startRound = () => {
-  const firstNumber = generateRandomNumber();
-  const secondNumber = generateRandomNumber();
+  const firstNumber = generateRandomNumber(1, 100);
+  const secondNumber = generateRandomNumber(1, 100);
   const operators = '+*';
   const randomIndex = Math.floor(Math.random() * operators.length);
   const randomOperator = operators[randomIndex];
