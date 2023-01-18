@@ -7,18 +7,18 @@ const startRound = () => {
   const allNumbers = [];
   let startNumber = generateRandomNumber(1, 10);
   const multiplier = generateRandomNumber(1, 10);
-  const quantity = generateRandomNumber(6, 11);
+  const quantity = generateRandomNumber(5, 10);
   let i = 0;
-  while (i < quantity) {
+  while (i <= quantity) {
     allNumbers.push(startNumber);
     startNumber += multiplier;
     i += 1;
   }
   const passNumber = generateRandomNumber(0, quantity);
-  const numbersStr = `${allNumbers.slice(0, passNumber)} .. ${allNumbers.slice(passNumber + 1, allNumbers.length - 1)}`;
-  const numbersArr = numbersStr.split(',');
-  const numberForQuestion = numbersArr.join(' ');
-  const correctAnswer = allNumbers[passNumber].toString();
+  const a = allNumbers[passNumber];
+  allNumbers[passNumber] = '..';
+  const numberForQuestion = allNumbers.join(' ');
+  const correctAnswer = a.toString();
   return [numberForQuestion, correctAnswer];
 };
 
