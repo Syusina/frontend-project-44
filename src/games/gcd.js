@@ -1,13 +1,15 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { getTested } from '../index.js';
+import startGame from '../index.js';
 import generateRandomNumber from '../generator-random.js';
 
-const startRound = (gretting) => {
+const nameGame = 'brain-gcd\n';
+const gameRules = 'Find the greatest common divisor of given numbers.';
+
+const startRound = () => {
   let firstNumber = generateRandomNumber();
   let secondNumber = generateRandomNumber();
-  console.log(`Question: ${firstNumber} ${secondNumber} `);
-  const userAnswer = readlineSync.question('Your answer: ').toString();
+  const numberForQuestion = `${firstNumber} ${secondNumber}`;
+
   while (firstNumber !== secondNumber) {
     if (firstNumber > secondNumber) {
       firstNumber -= secondNumber;
@@ -16,8 +18,9 @@ const startRound = (gretting) => {
     }
   }
   const correctAnswer = firstNumber.toString();
-  const result = getTested(userAnswer, correctAnswer, gretting);
-  return result;
+  return [numberForQuestion, correctAnswer];
 };
 
-export default startRound;
+const letsPlay = () => startGame(nameGame, gameRules, startRound);
+
+export default letsPlay;

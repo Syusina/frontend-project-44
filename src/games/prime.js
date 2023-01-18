@@ -1,16 +1,16 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { getTested } from '../index.js';
+import startGame from '../index.js';
 import generateRandomNumber from '../generator-random.js';
 import isPrime from '../isPrime.js';
 
-const startRound = (gretting) => {
+const nameGame = 'brain-prime\n';
+const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const startRound = () => {
   const numberForQuestion = generateRandomNumber();
-  console.log(`Question: ${numberForQuestion} `);
-  const userAnswer = readlineSync.question('Your answer: ').toLowerCase();
   const correctAnswer = (isPrime(numberForQuestion)) ? 'yes' : 'no';
-  const result = getTested(userAnswer, correctAnswer, gretting);
-  return result;
+  return [numberForQuestion, correctAnswer];
 };
 
-export default startRound;
+const letsPlay = () => startGame(nameGame, gameRules, startRound);
+
+export default letsPlay;

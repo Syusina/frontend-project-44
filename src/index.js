@@ -1,31 +1,27 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-export const getGreeting = (nameGame, gameRules) => {
+const startGame = (nameGame, gameRules, startRound) => {
+// приветствие
   console.log(`${nameGame}\nWelcome to the Brain Games!`);
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log(gameRules);
-  return userName;
-};
+  console.log(`Hello, ${userName}!\n${gameRules}`);
 
-export const getTested = (userAnswer, correctAnswer, userName) => {
-  let result;
-  if (userAnswer === correctAnswer) {
-    console.log('Correct!');
-    result = true;
-  } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
-    result = false;
-  }
-  return result;
-};
-
-export const startGame = (start, userName) => {
+  // начало раунда
   for (let i = 0; i < 3; i += 1) {
-    const rightAnswer = start(userName);
-    if (!rightAnswer) {
+    const [numberForQuestion, correctAnswer] = startRound();
+    console.log(`Question: ${numberForQuestion}`);
+    const userAnswer = readlineSync.question('Your answer: ').toLowerCase();
+
+    // проверка ответа
+    if (userAnswer === correctAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
       return;
     }
   }
   console.log(`Congratulations, ${userName}!`);
 };
+
+export default startGame;

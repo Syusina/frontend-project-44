@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { getTested } from '../index.js';
+import startGame from '../index.js';
 import generateRandomNumber from '../generator-random.js';
 
-const startRound = (gretting) => {
+const nameGame = 'brain-progression\n';
+const gameRules = 'What number is missing in the progression?';
+const startRound = () => {
   const allNumbers = [];
   let startNumber = generateRandomNumber();
   const multiplier = generateRandomNumber();
@@ -14,20 +15,19 @@ const startRound = (gretting) => {
     startNumber += multiplier;
     i += 1;
   }
-  const getRandomInt = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
+  const getRandomInt = (minNum, maxNum) => {
+    const min = Math.ceil(minNum);
+    const max = Math.floor(maxNum);
     return Math.floor(Math.random() * (max - min)) + min;
-  }
+  };
   const passNumber = getRandomInt(0, 10);
   const numbersStr = `${allNumbers.slice(0, passNumber)} .. ${allNumbers.slice(passNumber + 1, allNumbers.length - 1)}`;
   const numbersArr = numbersStr.split(',');
-  const numbersForQuestion = numbersArr.join(' ');
-  const userAnswer = readlineSync.question(`Question: ${numbersForQuestion} `).toString();
-  console.log(`Your answer: ${userAnswer} `);
+  const numberForQuestion = numbersArr.join(' ');
   const correctAnswer = allNumbers[passNumber].toString();
-  const result = getTested(userAnswer, correctAnswer, gretting);
-  return result;
+  return [numberForQuestion, correctAnswer];
 };
 
-export default startRound;
+const letsPlay = () => startGame(nameGame, gameRules, startRound);
+
+export default letsPlay;
