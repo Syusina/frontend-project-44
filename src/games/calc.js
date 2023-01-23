@@ -1,20 +1,16 @@
 #!/usr/bin/env node
 import startGame from '../index.js';
 import generateRandomNumber from '../generator-random.js';
+import getMathExpression from '../random-symbol.js';
 
-const gameRules = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
-const startRound = () => {
+const getQuestionAndAnswer = () => {
   const firstNumber = generateRandomNumber(1, 100);
   const secondNumber = generateRandomNumber(1, 100);
-  const operators = '+*';
-  const randomIndex = Math.floor(Math.random() * operators.length);
-  const randomOperator = operators[randomIndex];
-  const numberForQuestion = `${firstNumber} ${randomOperator} ${secondNumber}`;
-
-  const correctAnswer = (randomOperator === '+') ? (firstNumber + secondNumber).toString() : (firstNumber * secondNumber).toString();
-  return [numberForQuestion, correctAnswer];
+  const questionAndAnswer = getMathExpression(firstNumber, secondNumber);
+  return questionAndAnswer;
 };
-const letsPlay = () => startGame(gameRules, startRound);
+const letsPlay = () => startGame(description, getQuestionAndAnswer);
 
 export default letsPlay;

@@ -1,27 +1,20 @@
 #!/usr/bin/env node
 import startGame from '../index.js';
 import generateRandomNumber from '../generator-random.js';
+import getProgression from '../getProgression.js';
+import getPassNumber from '../passNumber.js';
 
-const gameRules = 'What number is missing in the progression?';
-const startRound = () => {
-  const allNumbers = [];
-  let startNumber = generateRandomNumber(1, 10);
-  const multiplier = generateRandomNumber(1, 10);
-  const quantity = generateRandomNumber(5, 10);
-  let i = 0;
-  while (i <= quantity) {
-    allNumbers.push(startNumber);
-    startNumber += multiplier;
-    i += 1;
-  }
-  const passNumber = generateRandomNumber(0, quantity);
-  const a = allNumbers[passNumber];
-  allNumbers[passNumber] = '..';
-  const numberForQuestion = allNumbers.join(' ');
-  const correctAnswer = a.toString();
-  return [numberForQuestion, correctAnswer];
+const description = 'What number is missing in the progression?';
+const getQuestionAndAnswer = () => {
+  const startNumber = generateRandomNumber(1, 10);
+  const step = generateRandomNumber(1, 10);
+  const length = generateRandomNumber(5, 10);
+  const progression = getProgression(startNumber, step, length);
+  const passIndex = generateRandomNumber(0, length);
+  const questionAndAnswer = getPassNumber(progression, passIndex);
+  return questionAndAnswer;
 };
 
-const letsPlay = () => startGame(gameRules, startRound);
+const letsPlay = () => startGame(description, getQuestionAndAnswer);
 
 export default letsPlay;

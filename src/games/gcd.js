@@ -1,25 +1,18 @@
 #!/usr/bin/env node
 import startGame from '../index.js';
 import generateRandomNumber from '../generator-random.js';
+import getDivider from '../getDivider.js';
 
-const gameRules = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
-const startRound = () => {
-  let firstNumber = generateRandomNumber(1, 100);
-  let secondNumber = generateRandomNumber(1, 100);
+const getQuestionAndAnswer = () => {
+  const firstNumber = generateRandomNumber(1, 100);
+  const secondNumber = generateRandomNumber(1, 100);
   const numberForQuestion = `${firstNumber} ${secondNumber}`;
-
-  while (firstNumber !== secondNumber) {
-    if (firstNumber > secondNumber) {
-      firstNumber -= secondNumber;
-    } else {
-      secondNumber -= firstNumber;
-    }
-  }
-  const correctAnswer = firstNumber.toString();
+  const correctAnswer = getDivider(firstNumber, secondNumber).toString();
   return [numberForQuestion, correctAnswer];
 };
 
-const letsPlay = () => startGame(gameRules, startRound);
+const letsPlay = () => startGame(description, getQuestionAndAnswer);
 
 export default letsPlay;
