@@ -3,30 +3,34 @@ import startGame from '../index.js';
 import generateRandomNumber from '../generator-random.js';
 
 const description = 'What is the result of the expression?';
+const operators = ['+', '-'];
+
+const getRandomOperator = (symbol) => {
+  const randomIndex = generateRandomNumber(0, symbol.length);
+  const randomSymbol = symbol[randomIndex];
+  return randomSymbol;
+};
+
+const calculateOperations = (symbol, firstNumber, secondNumber) => {
+  switch (symbol) {
+    case '+':
+      return firstNumber + secondNumber;
+    case '-':
+      return firstNumber - secondNumber;
+    default:
+      return null;
+  }
+};
 
 const getQuestionAndAnswer = () => {
-  const num1 = generateRandomNumber(1, 100);
-  const num2 = generateRandomNumber(1, 100);
+  const randomSymbol = getRandomOperator(operators);
+  const firstNumber = generateRandomNumber(0, 50);
+  const secondNumber = generateRandomNumber(0, 50);
 
-  const getMathExpression = (firstNumber, secondNumber) => {
-    const operators = '+*';
-    const randomIndex = Math.floor(Math.random() * operators.length);
-    const randomOperator = operators[randomIndex];
-    let numberForQuestion;
-    let correctAnswer;
+  const question = `${firstNumber} ${randomSymbol} ${secondNumber}`;
+  const correctAnswer = String(calculateOperations(randomSymbol, firstNumber, secondNumber));
 
-    if (randomOperator === '+') {
-      numberForQuestion = `${firstNumber} + ${secondNumber}`;
-      correctAnswer = (firstNumber + secondNumber).toString();
-    } else {
-      numberForQuestion = `${firstNumber} * ${secondNumber}`;
-      correctAnswer = (firstNumber * secondNumber).toString();
-    }
-    return [numberForQuestion, correctAnswer];
-  };
-
-  const questionAndAnswer = getMathExpression(num1, num2);
-  return questionAndAnswer;
+  return [question, correctAnswer];
 };
 const letsPlay = () => startGame(description, getQuestionAndAnswer);
 

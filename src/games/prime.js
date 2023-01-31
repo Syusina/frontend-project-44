@@ -3,29 +3,22 @@ import startGame from '../index.js';
 import generateRandomNumber from '../generator-random.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const isPrime = (num) => {
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
+      return false;
+    }
+    if (num < 2) {
+      return false;
+    }
+  }
+  return true;
+};
+
 const getQuestionAndAnswer = () => {
-  const numberForQuestion = generateRandomNumber(1, 20);
-
-  const isPrime = (number) => {
-    const num = number;
-    const checkPrime = () => {
-      if (num < 2) {
-        return false;
-      }
-      let divider = 2;
-      while (divider <= num / 2) {
-        if (num % divider === 0) {
-          return false;
-        }
-        divider += 1;
-      }
-      return true;
-    };
-    const correctAnswer = checkPrime(num) ? 'yes' : 'no';
-    return correctAnswer;
-  };
-
-  const correctAnswer = isPrime(numberForQuestion);
+  const numberForQuestion = generateRandomNumber(2, 20);
+  const correctAnswer = isPrime(numberForQuestion) ? 'yes' : 'no';
   return [numberForQuestion, correctAnswer];
 };
 

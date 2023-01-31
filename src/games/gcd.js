@@ -4,24 +4,23 @@ import generateRandomNumber from '../generator-random.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
+const getDivider = (num1, num2) => {
+  let firstNumber = num1;
+  let secondNumber = num2;
+  while (firstNumber !== secondNumber) {
+    if (firstNumber > secondNumber) {
+      firstNumber -= secondNumber;
+    } else {
+      secondNumber -= firstNumber;
+    }
+  }
+  return firstNumber;
+};
+
 const getQuestionAndAnswer = () => {
   const operand1 = generateRandomNumber(1, 100);
   const operand2 = generateRandomNumber(1, 100);
   const numberForQuestion = `${operand1} ${operand2}`;
-
-  const getDivider = (firstNumber, secondNumber) => {
-    let num1 = firstNumber;
-    let num2 = secondNumber;
-    while (num1 !== num2) {
-      if (num1 > num2) {
-        num1 -= num2;
-      } else {
-        num2 -= num1;
-      }
-    }
-    return num1;
-  };
-
   const correctAnswer = getDivider(operand1, operand2).toString();
   return [numberForQuestion, correctAnswer];
 };
