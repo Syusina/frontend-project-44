@@ -3,7 +3,7 @@ import startGame from '../index.js';
 import generateRandomNumber from '../generator-random.js';
 
 const description = 'What is the result of the expression?';
-const operators = ['+', '-'];
+const operators = ['+', '-', '*'];
 
 const getRandomOperator = (symbol) => {
   const randomIndex = generateRandomNumber(0, symbol.length);
@@ -17,6 +17,8 @@ const calculateOperations = (symbol, firstNumber, secondNumber) => {
       return firstNumber + secondNumber;
     case '-':
       return firstNumber - secondNumber;
+    case '*':
+      return firstNumber * secondNumber;
     default:
       return null;
   }
@@ -24,8 +26,8 @@ const calculateOperations = (symbol, firstNumber, secondNumber) => {
 
 const getQuestionAndAnswer = () => {
   const randomSymbol = getRandomOperator(operators);
-  const firstNumber = generateRandomNumber(0, 50);
-  const secondNumber = generateRandomNumber(0, 50);
+  const firstNumber = generateRandomNumber(0, 20);
+  const secondNumber = generateRandomNumber(0, 20);
 
   const question = `${firstNumber} ${randomSymbol} ${secondNumber}`;
   const correctAnswer = String(calculateOperations(randomSymbol, firstNumber, secondNumber));
