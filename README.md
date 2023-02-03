@@ -37,7 +37,7 @@ Node.js `v13.0.0` or higher must be installed to run the games. Then install the
 <a href="https://asciinema.org/a/B6O488QUkzUtrCqHntcJoFunt" target="_blank"><img src="https://asciinema.org/a/B6O488QUkzUtrCqHntcJoFunt.svg" /></a>
 
 <h3>Brain-calc:</h3> 
-<a href="https://asciinema.org/a/M4YE4OMHNahWdlNZj3FdrZYSn" target="_blank"><img src="https://asciinema.org/a/M4YE4OMHNahWdlNZj3FdrZYSn.svg" /></a>
+<a href="https://asciinema.org/a/xJmfY78OGJ6XbgRmfuCQ1Yvvy" target="_blank"><img src="https://asciinema.org/a/xJmfY78OGJ6XbgRmfuCQ1Yvvy.svg" /></a>
 
 <h3>Brain-gcd:</h3>
 <a href="https://asciinema.org/a/6eydbzyQr7rEQZYhSqMWSiUlO" target="_blank"><img src="https://asciinema.org/a/6eydbzyQr7rEQZYhSqMWSiUlO.svg" /></a>
